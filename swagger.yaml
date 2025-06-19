@@ -1,23 +1,22 @@
----
 openapi: 3.0.1
 info:
   title: OpenAPI definition
   version: v0
 servers:
-- url: http://localhost:8080
-  description: Generated server url
+  - url: http://localhost:8080
+    description: Generated server url
 paths:
   "/join":
     post:
       tags:
-      - join-controller
+        - join-controller
       operationId: joinProcess
       parameters:
-      - name: joinDTO
-        in: query
-        required: true
-        schema:
-          "$ref": "#/components/schemas/JoinDTO"
+        - name: joinDTO
+          in: query
+          required: true
+          schema:
+            "$ref": "#/components/schemas/JoinDTO"
       responses:
         '200':
           description: OK
@@ -28,7 +27,7 @@ paths:
   "/api/login":
     post:
       tags:
-      - login-controller
+        - login-controller
       operationId: login
       requestBody:
         content:
@@ -46,7 +45,7 @@ paths:
   "/admin":
     get:
       tags:
-      - admin-controller
+        - admin-controller
       operationId: adminP
       responses:
         '200':
@@ -58,7 +57,7 @@ paths:
   "/":
     get:
       tags:
-      - main-controller
+        - main-controller
       operationId: mainP
       responses:
         '200':
